@@ -1,0 +1,12 @@
+[Unit]
+Description=Goss service check
+
+[Service]
+Restart=on-failure
+RestartSec=15
+WorkingDirectory=/etc/goss
+Type=simple
+ExecStart=/usr/local/bin/goss -g /etc/goss/goss.yaml serve --format prometheus
+
+[Install]
+WantedBy=multi-user.target
