@@ -2,11 +2,11 @@
 Description=Goss service check
 
 [Service]
-Restart=on-failure
-RestartSec=15
+#Restart=always
+#RestartSec=60s
 WorkingDirectory=/etc/goss
-Type=simple
-ExecStart=/usr/local/bin/goss -g /etc/goss/goss.yaml serve --format prometheus
+Type=oneshot
+ExecStart=/usr/local/bin/gosscheck
 
 [Install]
 WantedBy=multi-user.target

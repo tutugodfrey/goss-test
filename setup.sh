@@ -5,10 +5,14 @@ chmod +rx /usr/local/bin/goss
 
 mkdir /etc/goss
 cp goss.yaml /etc/goss
+cp gosscheck /usr/local/bin/
 cp goss.service /etc/systemd/system/
+cp goss.timer /etc/systemd/system/
 systemctl daemon-reload
-systemctl start goss
+systemctl start goss.timer
 
-kubectl apply -f goss-endpoint.yaml
-kubectl apply -f goss-service.yaml
-kubectl apply -f goss-service-monitor.yaml
+kubectl apply -f pushgateway.yaml
+
+# kubectl apply -f goss-endpoint.yaml
+# kubectl apply -f goss-service.yaml
+# kubectl apply -f goss-service-monitor.yaml

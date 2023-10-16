@@ -1,0 +1,9 @@
+[Unit]
+Description=Goss test
+
+[Timer]
+OnUnitActiveSec=5m
+OnBootSec=1m
+
+[Install]
+WantedBy=timers.target

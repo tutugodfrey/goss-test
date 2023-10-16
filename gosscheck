@@ -1,0 +1,3 @@
+#! /bin/sh
+
+/usr/local/bin/goss -g /etc/goss/goss.yaml validate --format=prometheus | curl --data-binary @- http://172.30.1.2:32582/metrics/job/goss/instance/$(hostname) > /var/log/goss.log;

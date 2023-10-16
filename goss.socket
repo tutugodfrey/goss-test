@@ -1,0 +1,10 @@
+[Unit]
+Description=Goss server socket
+#Conflicts=goss.service
+
+[Socket]
+ListenStream=8080
+Accept=yes
+
+[Install]
+WantedBy=sockets.target

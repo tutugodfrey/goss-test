@@ -1,0 +1,14 @@
+[Unit]
+Description=Goss service check
+StartLimitBurst=4
+StartLimitIntervalSec=3s
+
+[Service]
+Restart=always
+RestartSec=3s
+WorkingDirectory=/etc/goss
+Type=simple
+ExecStart=/usr/local/bin/goss -g /etc/goss/goss.yaml serve --format prometheus
+
+[Install]
+WantedBy=multi-user.target
