@@ -1,6 +1,10 @@
 #! /bin/bash
 
-curl -L https://github.com/goss-org/goss/releases/latest/download/goss-linux-amd64 -o /usr/local/bin/goss
+# curl -L https://github.com/goss-org/goss/releases/latest/download/goss-linux-amd64 -o /usr/local/bin/goss
+# chmod +rx /usr/local/bin/goss
+
+VERSION=v0.4.2
+curl -L "https://github.com/goss-org/goss/releases/download/${VERSION}/goss-linux-amd64" -o /usr/local/bin/goss
 chmod +rx /usr/local/bin/goss
 
 mkdir /etc/goss
